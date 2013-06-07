@@ -12,13 +12,13 @@
                 "children":
                 [
                     {
-                        "caption": "Plugin Bundler",
+                        "caption": "Package Bundler",
                         "children":
                         [
                             {
                                 "command": "open_file", "args":
                                 {
-                                    "file": "${packages}/User/Plugin Bundler.sublime-settings"
+                                    "file": "${packages}/User/Package Bundler.sublime-settings"
                                 },
                                 "caption": "Settings – User"
                             }
