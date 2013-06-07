@@ -1,10 +1,10 @@
 # Sublime Text 2 - Package Bundler
 
-This plugin allows you to have multiple package sets.
+This package allows you to have multiple package sets.
 
 When you're doing some PHP, you don't need Ruby packages.
 
-With this plugin, you can create multiple presets of "ignored_packages" that you can load at will.
+With this package, you can create multiple presets of "ignored_packages" that you can load at will.
 
 ## Installation
 
