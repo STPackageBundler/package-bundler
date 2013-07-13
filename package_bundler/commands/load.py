@@ -1,11 +1,11 @@
 import sublime
 import sublime_plugin
 
-from ..settings import settings_filename
+from ..settings import *
 from .base import BaseWindowCommand
 
 class PackageBundlerLoadCommand(BaseWindowCommand):
-    def chosen(self, picked):
+    def chosen_bundle(self, picked):
         if picked == -1:
             return
 
@@ -24,10 +24,10 @@ class PackageBundlerLoadCommand(BaseWindowCommand):
 
     def write_ignored_packages(self, bundle):    
         if bundle['ignored_packages']:
-            settings = sublime.load_settings('Preferences.sublime-settings')
+            settings = sublime.load_settings(st_settings_filename())
             settings.set('ignored_packages', bundle['ignored_packages'])
-            sublime.save_settings('Preferences.sublime-settings')
+            sublime.save_settings(st_settings_filename())
 
     def save_loaded_package(self, name):
         self.settings.set('loaded_bundle', name)
-        sublime.save_settings(settings_filename())
+        sublime.save_settings(pb_settings_filename())

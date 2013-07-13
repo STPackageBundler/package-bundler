@@ -1,18 +1,18 @@
 import sublime
 import sublime_plugin
 
-from ..settings import settings_filename
+from ..settings import *
 
 class BaseWindowCommand(sublime_plugin.WindowCommand):
     def run(self):
-        self.settings = sublime.load_settings(settings_filename())
-        bundles = self.get_bundles_list()
+        self.settings = sublime.load_settings(pb_settings_filename())
+        bundles = self.define_current_bundle(self.get_bundles_list())
 
         if len(bundles) == 0:
             sublime.error_message('Package Bundler Error: No bundle to load')
             return
 
-        self.window.show_quick_panel(bundles, self.chosen)
+        self.show_quick_panel(bundles, self.chosen_bundle)
 
     def get_bundles_list(self):
         if not self.settings.get('bundles'):
@@ -21,8 +21,6 @@ class BaseWindowCommand(sublime_plugin.WindowCommand):
         bundles = list(map(lambda bundle:
             bundle[0]
             , self.settings.get('bundles').items()))
-
-        bundles = self.define_current_bundle(bundles)
 
         return bundles
 
@@ -39,5 +37,8 @@ class BaseWindowCommand(sublime_plugin.WindowCommand):
 
         return bundles
 
-    def chosen(self):
+    def chosen_bundle(self):
         raise NotImplementedError
+
+    def show_quick_panel(self, options, done):
+        sublime.set_timeout(lambda: self.window.show_quick_panel(options, done), 10)
