@@ -1,6 +1,10 @@
 [
   {
-    "caption": "Package Bundler : Load Bundle",
+    "caption": "Package Bundler: Load Bundle",
     "command": "package_bundler_load"
+  },
+  {
+    "caption": "Package Bundler: Manage Bundle",
+    "command": "package_bundler_manager"
   }
 ]
