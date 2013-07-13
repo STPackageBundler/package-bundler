@@ -8,6 +8,12 @@ With this package, you can create multiple presets of "ignored_packages" that yo
 
 ## Installation
 
+### Package Control (recommended)
+
+Search "Package Bundler" into Package Control
+
+### Manual
+
 Go to your ST2 Packages dir, then:
 
 ```bash
