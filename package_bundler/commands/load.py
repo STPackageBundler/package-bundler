@@ -20,7 +20,7 @@ class PackageBundlerLoadCommand(BaseWindowCommand):
         self.write_ignored_packages(bundle)
         self.save_loaded_package(name)
 
-        sublime.status_message('Package Bundle: bundle '+name+' loaded')
+        sublime.status_message('Package Bundler: bundle '+name+' loaded')
 
     def write_ignored_packages(self, bundle):    
         if bundle['ignored_packages']:

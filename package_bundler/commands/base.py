@@ -9,7 +9,7 @@ class BaseWindowCommand(sublime_plugin.WindowCommand):
         bundles = self.define_current_bundle(self.get_bundles_list())
 
         if len(bundles) == 0:
-            sublime.error_message('Package Bundler Error: No bundle to load')
+            sublime.error_message('Package Bundler: No bundle to load')
             return
 
         self.show_quick_panel(bundles, self.chosen_bundle)
