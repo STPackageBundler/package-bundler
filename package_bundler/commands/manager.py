@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 
 from ..settings import *
-from .base import BaseWindowCommand
+from .base_window import BaseWindowCommand
 
 PackageControl = __import__('Package Control')
 

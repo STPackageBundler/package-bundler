@@ -2,7 +2,7 @@ import sublime
 import sublime_plugin
 
 from ..settings import *
-from .base import BaseWindowCommand
+from .base_window import BaseWindowCommand
 
 class PackageBundlerLoadCommand(BaseWindowCommand):
     def chosen_bundle(self, picked):
