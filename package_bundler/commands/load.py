@@ -1,8 +1,8 @@
 import sublime
 import sublime_plugin
 
-from ..settings import *
 from .base_window import BaseWindowCommand
+from ..bundle_loader import BundleLoader
 
 class PackageBundlerLoadCommand(BaseWindowCommand):
     def chosen_bundle(self, picked):
@@ -17,17 +17,6 @@ class PackageBundlerLoadCommand(BaseWindowCommand):
     def get_bundle(self, name):
         bundle = self.settings.get('bundles')[name]
 
-        self.write_ignored_packages(bundle)
-        self.save_loaded_package(name)
+        BundleLoader.load_bundle(name)
 
         sublime.status_message('Package Bundler: bundle '+name+' loaded')
-
-    def write_ignored_packages(self, bundle):    
-        if bundle['ignored_packages']:
-            settings = sublime.load_settings(st_settings_filename())
-            settings.set('ignored_packages', bundle['ignored_packages'])
-            sublime.save_settings(st_settings_filename())
-
-    def save_loaded_package(self, name):
-        self.settings.set('loaded_bundle', name)
-        sublime.save_settings(pb_settings_filename())
