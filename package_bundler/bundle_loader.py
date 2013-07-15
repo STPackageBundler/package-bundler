@@ -22,3 +22,8 @@ class BundleLoader:
     def save_loaded_package(bundle_name):
         BundleLoader.settings.set('loaded_bundle', bundle_name)
         sublime.save_settings(pb_settings_filename())
+
+    def get_loaded_bundle():
+        BundleLoader.load_settings()
+
+        return BundleLoader.settings.get('loaded_bundle')
