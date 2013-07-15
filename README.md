@@ -28,6 +28,10 @@ Installation through Package Control is mandatory because Package Bundler uses P
 
 Open Command Palette > Package Bundler : Load Bundle, then choose your bundle.
 
+### Add and ignored package to a bundle
+
+Open Command Palette > Package Bundler : Manage Bundle
+
 ### Auto load a bundle per project
 
 You can open your _<project>_.sublime-settings and add a setting to auto load a bundle for this project.
