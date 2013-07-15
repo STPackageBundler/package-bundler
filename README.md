@@ -34,7 +34,7 @@ Open Command Palette > Package Bundler : Manage Bundle
 
 ### Auto load a bundle per project
 
-You can open your _<project>_.sublime-settings and add a setting to auto load a bundle for this project.
+You can open your _project_.sublime-settings and add a setting to auto load a bundle for this project.
 
 ```json
 {
