@@ -24,4 +24,26 @@ Installation through Package Control is mandatory because Package Bundler uses P
 
 ## Usage
 
+### Load a bundle
+
 Open Command Palette > Package Bundler : Load Bundle, then choose your bundle.
+
+### Auto load a bundle per project
+
+You can open your _<project>_.sublime-settings and add a setting to auto load a bundle for this project.
+
+```json
+{
+    "folders":
+    [
+        {
+            "follow_symlinks": true,
+            "path": "/path/to/project"
+        }
+    ],
+    "settings":
+    {
+        "pb_load_bundle": "YourBundle"
+    }
+}
+```
