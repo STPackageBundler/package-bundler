@@ -12,7 +12,7 @@ For a recent development I had to do for issue #2, I used features avalaible fro
 
 As ST3 is now in public beta and should soon be released as stable, I don't want to "waste" time maintaining this package for a "soon-to-be-outdated" version.
 
-Sorry for any inconvenience from this decision :)
+If many people ask me to be compatible again with ST2, I'll manage to do it.
 
 ## Installation
 
