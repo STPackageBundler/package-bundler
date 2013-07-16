@@ -5,9 +5,12 @@ from ..bundle_loader import BundleLoader
 
 class ProjectLoaderEventListener(sublime_plugin.EventListener):
     def on_activated(self, view):
-        project_settings = view.window().project_data()
+        try:
+            project_settings = view.window().project_data()
+        except Exception:
+            project_settings = None
 
-        if not project_settings['settings']['pb_load_bundle']:
+        if project_settings is None or not 'settings' in project_settings or not 'pb_load_bundle' in project_settings['settings']:
             return
 
         if project_settings['settings']['pb_load_bundle'] == BundleLoader.get_loaded_bundle():
