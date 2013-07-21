@@ -9,10 +9,16 @@ class BaseWindowCommand(sublime_plugin.WindowCommand):
         bundles = self.define_current_bundle(self.get_bundles_list())
 
         if len(bundles) == 0:
-            sublime.error_message('Package Bundler: No bundle to load')
+            sublime.error_message("Package Bundler: No bundle to load.\nPlease enter a first bundle name.")
+            self.window.show_input_panel('Bundle name:', '', self.create_first_bundle, None, None)
             return
 
         self.show_quick_panel(bundles, self.chosen_bundle)
+
+    def create_first_bundle(self, bundle_name):
+        self.settings.set('bundles', {bundle_name: {"ignored_packages": []}})
+        sublime.save_ettings(pb_settings_filename())
+        sublime.status_message('Bundle created!')
 
     def get_bundles_list(self):
         if not self.settings.get('bundles'):
