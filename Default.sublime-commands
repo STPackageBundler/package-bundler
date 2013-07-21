@@ -6,5 +6,9 @@
   {
     "caption": "Package Bundler: Manage Bundle",
     "command": "package_bundler_manager"
+  },
+  {
+    "caption": "Package Bundler: Create Bundle",
+    "command": "package_bundler_create_bundle"
   }
 ]

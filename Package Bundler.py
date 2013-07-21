@@ -1,3 +1,4 @@
 from .package_bundler.commands.load import PackageBundlerLoadCommand
 from .package_bundler.commands.manager import PackageBundlerManagerCommand
+from .package_bundler.commands.create import PackageBundlerCreateBundleCommand
 from .package_bundler.events_listeners.project_loader import ProjectLoaderEventListener
