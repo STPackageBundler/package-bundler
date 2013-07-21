@@ -26,11 +26,15 @@ Installation through Package Control is mandatory because Package Bundler uses P
 
 ### Load a bundle
 
-Open Command Palette > Package Bundler : Load Bundle, then choose your bundle.
+Open Command Palette > Package Bundler: Load Bundle, then choose your bundle.
 
 ### Add and ignored package to a bundle
 
-Open Command Palette > Package Bundler : Manage Bundle
+Open Command Palette > Package Bundler: Manage Bundle
+
+### Create a bundle
+
+Open Command Palette > Package Bundler: Create Bundle
 
 ### Auto load a bundle per project
 
