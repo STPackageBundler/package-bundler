@@ -48,7 +48,7 @@ class PackageBundlerManagerCommand(BaseWindowCommand):
         self.settings.set('bundles', bundles)
         sublime.save_settings(pb_settings_filename())
 
-        sublime.status_message('Package Bundler: package '+ignored_packages+' added to '+self.picked_bundle+' bundle\'s ignore list')
+        sublime.status_message('Package Bundler: package '+ignored_package+' added to '+self.picked_bundle+' bundle\'s ignore list')
 
     def pick_old_ignored_package(self):
         bundle_ignored_packages = self.settings.get('bundles')[self.picked_bundle]['ignored_packages']
@@ -64,6 +64,8 @@ class PackageBundlerManagerCommand(BaseWindowCommand):
         if picked == -1:
             return
 
+        packages_list = self.get_ignorable_packages()
+        ignored_package = packages_list[picked]
         bundles = self.settings.get('bundles')
 
         bundles[self.picked_bundle]['ignored_packages'].remove(bundles[self.picked_bundle]['ignored_packages'][picked])
@@ -71,7 +73,7 @@ class PackageBundlerManagerCommand(BaseWindowCommand):
         self.settings.set('bundles', bundles)
         sublime.save_settings(pb_settings_filename())
 
-        sublime.status_message('Package Bundler: package '+ignored_packages+' removed from '+self.picked_bundle+' bundle\'s ignore list')
+        sublime.status_message('Package Bundler: package '+ignored_package+' removed from '+self.picked_bundle+' bundle\'s ignore list')
 
     def get_ignorable_packages(self):
         manager = PackageControl.package_control.package_manager.PackageManager()
