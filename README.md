@@ -1,5 +1,9 @@
 # Sublime Text 3 - Package Bundler
 
+# Looking for a new maintainer
+
+I don't use  ST anymore (VIM ftw). So contact me if you want to take the project over. chadrien@chadrien.fr or [@chadrien](https://twitter.com/chadrien)
+
 This package allows you to have multiple package sets.
 
 When you're doing some PHP, you don't need Ruby packages.
