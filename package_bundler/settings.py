@@ -1,3 +1,5 @@
+import sublime
+
 def pb_settings_filename():
     return 'Package Bundler.sublime-settings'
 
